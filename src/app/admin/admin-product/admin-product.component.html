@@ -1,0 +1,10 @@
+<div class="section-header">
+  <form [formGroup]="searchForm">
+    <mat-form-field class="example-full-width" appearance="standard">
+      <mat-label>Name:</mat-label>
+      <input formControlName="search" matInput placeholder="name here...">
+    </mat-form-field>
+  </form>
+  <button mat-raised-button (click)="openProductDialog()">Create product</button>
+</div>
+<app-product-list></app-product-list>

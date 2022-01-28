@@ -1,0 +1,28 @@
+<form class="example-form" [formGroup]="categoryForm" (ngSubmit)="addCategory()">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Name:</mat-label>
+    <input formControlName="name" matInput placeholder="name here...">
+    <mat-error *ngIf="categoryForm.controls['name'].hasError('required')">
+      Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Path:</mat-label>
+    <input formControlName="path" matInput placeholder="path here...">
+    <mat-error *ngIf="categoryForm.controls['path'].hasError('required')">
+      Path is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <ng-container *ngIf="!isUploaded">
+    <input type="file" (change)="upload($event)">
+    <mat-progress-bar mode="determinate" [value]="uploadPercent"></mat-progress-bar>
+  </ng-container>
+  <ng-container *ngIf="isUploaded">
+    <img [src]="valueByControl('imagePath')" alt="" width="120px">
+    <i class="uil uil-trash-alt" (click)="deleteImage()"></i>
+  </ng-container>
+  <hr>
+  <button mat-button mat-dialog-close>Close</button>
+  <button [disabled]="categoryForm.invalid" mat-raised-button color="primary" type="submit">Create</button>
+</form>

@@ -1,0 +1,19 @@
+.admin-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: white;
+  min-height: 100vh;
+  padding: 10px 10px 0 10px;
+}
+
+
+#v-pills-tab{
+  position: fixed;
+}
+
+.tab-content {
+  padding: 0 0 0 150px;
+}

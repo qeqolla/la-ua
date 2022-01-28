@@ -1,0 +1,64 @@
+<form class="example-form" [formGroup]="productForm" (ngSubmit)="createProduct()">
+  <div class="block-of-1">
+    <mat-form-field appearance="outline">
+      <mat-label>Choose category</mat-label>
+      <mat-select formControlName="category">
+        <mat-option *ngFor="let category of categories" [value]="category">
+          {{category.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="block-of-2">
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Name:</mat-label>
+      <input formControlName="name" matInput>
+      <mat-error *ngIf="productForm.controls['name'].hasError('required')">
+        Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Path:</mat-label>
+      <input formControlName="path" matInput>
+      <mat-error *ngIf="productForm.controls['path'].hasError('required')">
+        Path is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="block-of-1">
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Description:</mat-label>
+      <textarea formControlName="description" matInput></textarea>
+      <mat-error *ngIf="productForm.controls['description'].hasError('required')">
+        Description is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="block-of-2">
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Weight:</mat-label>
+      <input formControlName="weight" matInput>
+      <mat-error *ngIf="productForm.controls['weight'].hasError('required')">
+        Weight is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Price:</mat-label>
+      <input formControlName="price" matInput type="number">
+      <mat-error *ngIf="productForm.controls['price'].hasError('required')">
+        Price is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <ng-container *ngIf="!isUploaded">
+    <input type="file" (change)="upload($event)">
+    <mat-progress-bar mode="determinate" [value]="uploadPercent"></mat-progress-bar>
+  </ng-container>
+  <ng-container *ngIf="isUploaded">
+    <img [src]="valueByControl('imagePath')" alt="" width="120px">
+    <i class="uil uil-trash-alt" (click)="deleteImage()"></i>
+  </ng-container>
+  <hr>
+  <button mat-button mat-dialog-close>Close</button>
+  <button [disabled]="productForm.invalid" mat-raised-button color="primary" type="submit">Create</button>
+</form>

@@ -1,0 +1,18 @@
+<div class="header-margin"></div>
+
+<div class="col-12 col-lg-10 offset-lg-1">
+  <div class="sectionTitle fadeInTop grey-title">
+    <h1 class="h4 as text-center title">Акції</h1>
+  </div>
+  <div class="row promotion-list">
+    <div class="col-12 col-md-6" *ngFor="let d of userDiscounts">
+      <div class="discountProduct">
+        <a [routerLink]="[ '/discounts', d.id ]" class="imgWrapper">
+          <img [src]="d.imagePath" class="attachment-full size-full yellow" alt="">
+          <img [src]="d.imagePath" class="attachment-full size-full blue" alt="">
+        </a>
+        <a [routerLink]="[ '/discount', d.id ]" class="button">Детальніше</a>
+      </div>
+    </div>
+  </div>
+</div>

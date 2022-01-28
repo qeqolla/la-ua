@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "la-ua-4237c": {
+      "hosting": {
+        "la-ua": [
+          "la-ua-4237c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "la-ua-4237c"
+  }
+}

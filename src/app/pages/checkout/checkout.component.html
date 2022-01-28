@@ -1,0 +1,133 @@
+<ng-container *ngIf="basket.length > 0; else empty">
+  <div class="header-margin"></div>
+  <div class="row">
+    <div class="col-xl-10 offset-xl-1">
+      <div class="sectionTitle grey-title">
+        <h1 class="h4 as text-center title">Ваше замовлення</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row payMainWrapper">
+    <div class="col-xl-10 offset-xl-1">
+      <div class="row flex-direction-r-reverse">
+        <div class="col-xl-6">
+          <div class="payItems smallSlideLeft">
+            <div class="table">
+              <div class="thead">
+                <div class="tr">
+                  <div class="td">Товар</div>
+                  <div class="td">К-ть</div>
+                  <div class="td">Ціна</div>
+                </div>
+              </div>
+              <div class="tbody">
+                <div class="tr productOrder " *ngFor="let prod of basket">
+                  <div class="td" data-mobile-title="Товар">
+                    <div class="smallProduct">
+                      <a class="imgWrapper" [style]="'background-image: url(' + prod.imagePath + '}})'"></a>
+                      <div class="smallProductInfo">
+                        <h6 class="h6 as"><a href="https://la.ua/product/lapiec/">{{ prod.name }}</a></h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="td" data-mobile-productcount="Кількість">
+                    <div class="productCountWrapper">
+                      <span class="productCount lessProduct update-cart-product checkoutCount" (click)="productCount(prod, false)"></span>
+                      <input class="product-qty" maxlength="3" type="text" [value]="prod.count" >
+                      <span class="productCount moreProduct update-cart-product checkoutCount" (click)="productCount(prod, true)"></span>
+                    </div>
+                  </div>
+                  <div class="td">
+                    <div class="itemPrice productPrice">
+                      <span>{{ prod.count * prod.price }}</span><i>грн</i>
+                    </div>
+                  </div>
+                  <div class="delateProduct remove-cart-product-popup open-popup" (click)="removeProduct(prod)"></div>
+                </div>
+              </div>
+              <div class="tfoot">
+                <div class="td">
+                  <div class="fullPrice cart-total" data-blue-zone="0" data-red-zone="250" data-green-zone="150">
+                    <div class="totalFullPrice" style="display:block;">
+                      <p>Разом: {{ total }} грн</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-lg-pull-6">
+          <div class="payForm smallSlideRight">
+            <form id="make-order-form" [formGroup]="orderForm" (ngSubmit)="createOrder()">
+              <div class="block-of-1">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Name:</mat-label>
+                  <input formControlName="name" matInput>
+                  <mat-error *ngIf="orderForm.controls['name'].hasError('required')">
+                    Name is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="block-of-1">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Phone number:</mat-label>
+                  <input formControlName="phoneNumber" matInput [dropSpecialCharacters]="false" prefix="+38" [mask]="'(000)-000-00-00'">
+                  <mat-error *ngIf="orderForm.controls['phoneNumber'].hasError('required')">
+                    Phone number is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="block-of-1">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>City:</mat-label>
+                  <input formControlName="city" matInput>
+                  <mat-error *ngIf="orderForm.controls['city'].hasError('required')">
+                    city is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="block-of-2">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Street:</mat-label>
+                  <input formControlName="street" matInput>
+                  <mat-error *ngIf="orderForm.controls['street'].hasError('required')">
+                    Street is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>House:</mat-label>
+                  <input formControlName="house" matInput type="number">
+                  <mat-error *ngIf="orderForm.controls['house'].hasError('required')">
+                    House is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="block-of-1">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Description:</mat-label>
+                  <textarea formControlName="comment" matInput></textarea>
+                </mat-form-field>
+              </div>
+              <input [disabled]="orderForm.invalid" type="submit" class="button orderButton make-order">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ng-container>
+<ng-template #empty>
+  <div class="header-margin"></div>
+  <section class="section-404 cart-empty-section">
+    <div class="container">
+      <div class="row" style="min-height: 50vh; display:flex; align-items: center">
+        <div class="col-12 text-center">
+          <div class="h2 content-title">Ваш кошик порожній</div>
+          <a (click)="goToHomePage()" class="btn">На головну</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-template>

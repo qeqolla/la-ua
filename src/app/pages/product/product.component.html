@@ -1,0 +1,48 @@
+<div class="header-margin"></div>
+<div class="main-products type2" id="home-pizza">
+  <div class="container">
+    <div class="row hidden-xs">
+      <div class="col-12">
+        <h2 class="h1 block-title">{{currentCategoryName | titlecase}}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-lg-4" *ngFor="let product of products">
+        <div class="productThumbnail ">
+          <div class="productSize-W">
+            <span class="weight"><em>{{ product.weight }}</em></span>
+            <span class="size" *ngIf="product.category.path === 'pizza'">30 см</span>
+          </div>
+          <a class="productThumbnail-image">
+            <img [src]="product.imagePath" alt="" class="image-default">
+            <div class="image-hover">
+              <img [src]="product.imagePath" alt="">
+            </div>
+          </a>
+          <div class="productInfoWrapp">
+            <div class="productDescription ">
+              <div class="productTitle h5">
+                <a [routerLink]="">{{product.name}}</a>
+              </div>
+              <p>{{product.description}}</p>
+            </div>
+            <div class="productOrder">
+              <div class="productPrice">
+                <span data-product-price="187">{{product.price * product.count}} </span> <i>грн</i>
+              </div>
+              <div class="productCountWrapper">
+                <span class="productCount lessProduct" (click)="productCount(product, false)"></span>
+                <input type="text" maxlength="3" [value]="product.count">
+                <span class="productCount moreProduct" (click)="productCount(product, true)"></span>
+              </div>
+              <div class="button add-to-cart-product order-btn" (click)="addBasket(product)">Замовити</div>
+            </div>
+            <div class="productMoreInfo">
+              <a></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

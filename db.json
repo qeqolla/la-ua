@@ -1,0 +1,210 @@
+{
+  "discounts": [
+    {
+      "id": 1,
+      "description": "Акція «2+1» діє в понеділок, вівторок, середу та четвер. Замовляйте дві піци та отримуйте ще одну безкоштовно!",
+      "imagePath": "https://la.ua/wp-content/uploads/2021/08/4.png"
+    },
+    {
+      "description": "some new discount",
+      "imagePath": "https://la.ua/wp-content/uploads/2021/08/pryvedy-druga2.jpg",
+      "id": 2
+    }
+  ],
+  "category": [
+    {
+      "name": "піца",
+      "path": "pizza",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-a415b.appspot.com/o/images%2Fmenu-icon-2.svg.svg?alt=media&token=81d1f39f-4f25-4d1d-ade8-55446953949e",
+      "id": 1
+    },
+    {
+      "name": "салати",
+      "path": "salad",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-a415b.appspot.com/o/images%2Fmenu-icon-3.svg.svg?alt=media&token=ef73481d-86f2-4bf7-a755-68651e598249",
+      "id": 2
+    },
+    {
+      "name": "Десерти",
+      "path": "desserts",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-a415b.appspot.com/o/images%2Fdeserty.svg.svg?alt=media&token=f73cc3f9-30a2-4339-bb06-bcb20a4af986",
+      "id": 3
+    },
+    {
+      "name": "Напої",
+      "path": "drinks",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-a415b.appspot.com/o/images%2Fmenu-icon-4.svg.svg?alt=media&token=39630cb4-d8da-401a-bce8-7b02b46abf17",
+      "id": 4
+    }
+  ],
+  "products": [
+    {
+      "category": {
+        "name": "піца",
+        "path": "pizza",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-a415b.appspot.com/o/images%2Fmenu-icon-2.svg.svg?alt=media&token=81d1f39f-4f25-4d1d-ade8-55446953949e",
+        "id": 1
+      },
+      "name": "Піца La П’єц",
+      "path": "lapiec",
+      "description": "соус томатний, шинка, баварські ковбаски, сир моцарела, ковбаса салямі, прошуто.",
+      "weight": "450 гр",
+      "price": 205,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-a415b.appspot.com/o/images%2Fla-pyets.jpg.jpg?alt=media&token=aaf639dd-125b-4eea-ade3-c9682723e9f5",
+      "count": 1,
+      "id": 1
+    },
+    {
+      "category": {
+        "name": "салати",
+        "path": "salad",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-a415b.appspot.com/o/images%2Fmenu-icon-3.svg.svg?alt=media&token=ef73481d-86f2-4bf7-a755-68651e598249",
+        "id": 2
+      },
+      "name": "Інсалата ді Сальмоне",
+      "path": "insalata-di-salmone",
+      "description": "рукола, помідор чері, огірок, салат айсберг, соус айолі, пармезан, лосось, перепелине яйце, кунжут.",
+      "weight": " 285 гр",
+      "price": 152,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-a415b.appspot.com/o/images%2Finsalata-di-salmone1.png.png?alt=media&token=c18993a3-9f90-40ac-9054-79ccde411cd5",
+      "count": 1,
+      "id": 2
+    },
+    {
+      "category": {
+        "name": "Десерти",
+        "path": "desserts",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-a415b.appspot.com/o/images%2Fdeserty.svg.svg?alt=media&token=f73cc3f9-30a2-4339-bb06-bcb20a4af986",
+        "id": 3
+      },
+      "name": "Сирники",
+      "path": "syrnyky",
+      "description": "сирники, карамельний соус, сметана",
+      "weight": "240 гр",
+      "price": 75,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-a415b.appspot.com/o/images%2Fsyrnyky.png.png?alt=media&token=3aa9eac9-1a7e-4915-b83b-f987e2a268a0",
+      "count": 1,
+      "id": 3
+    },
+    {
+      "category": {
+        "name": "Напої",
+        "path": "drinks",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-a415b.appspot.com/o/images%2Fmenu-icon-4.svg.svg?alt=media&token=39630cb4-d8da-401a-bce8-7b02b46abf17",
+        "id": 4
+      },
+      "name": "Апельсиновий нектар з м’якоттю",
+      "path": "rich-orange",
+      "description": "Апельсиновий нектар з м’якоттю, 1 л, ТМ “RICH”",
+      "weight": "1 л",
+      "price": 47,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-a415b.appspot.com/o/images%2Frich_orange.jpg.jpg?alt=media&token=66db6d63-9409-4334-bf08-f5b2bceecdb1",
+      "count": 1,
+      "id": 4
+    }
+  ],
+  "orders": [
+    {
+      "name": "Ivan",
+      "phoneNumber": "+38(093)-333-33-33",
+      "city": "Lviv",
+      "street": "Franka",
+      "house": 61,
+      "comment": null,
+      "products": [
+        {
+          "category": {
+            "name": "піца",
+            "path": "pizza",
+            "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-a415b.appspot.com/o/images%2Fmenu-icon-2.svg.svg?alt=media&token=81d1f39f-4f25-4d1d-ade8-55446953949e",
+            "id": 1
+          },
+          "name": "Піца La П’єц",
+          "path": "lapiec",
+          "description": "соус томатний, шинка, баварські ковбаски, сир моцарела, ковбаса салямі, прошуто.",
+          "weight": "450 гр",
+          "price": 205,
+          "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-a415b.appspot.com/o/images%2Fla-pyets.jpg.jpg?alt=media&token=aaf639dd-125b-4eea-ade3-c9682723e9f5",
+          "count": 1,
+          "id": 1
+        }
+      ],
+      "status": "PENDING",
+      "totalPrice": 205,
+      "id": 1
+    },
+    {
+      "name": "dsa",
+      "phoneNumber": "+38(321)-321-32-1",
+      "city": "2321321",
+      "street": "dsa",
+      "house": 22,
+      "comment": "dsadsa",
+      "products": [],
+      "status": "PENDING",
+      "totalPrice": 0,
+      "id": 2
+    },
+    {
+      "name": "Petro",
+      "phoneNumber": "+38(099)-999-99-99",
+      "city": "Lviv",
+      "street": "VV",
+      "house": 11,
+      "comment": null,
+      "products": [
+        {
+          "category": {
+            "name": "піца",
+            "path": "pizza",
+            "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-a415b.appspot.com/o/images%2Fmenu-icon-2.svg.svg?alt=media&token=81d1f39f-4f25-4d1d-ade8-55446953949e",
+            "id": 1
+          },
+          "name": "Піца La П’єц",
+          "path": "lapiec",
+          "description": "соус томатний, шинка, баварські ковбаски, сир моцарела, ковбаса салямі, прошуто.",
+          "weight": "450 гр",
+          "price": 205,
+          "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-a415b.appspot.com/o/images%2Fla-pyets.jpg.jpg?alt=media&token=aaf639dd-125b-4eea-ade3-c9682723e9f5",
+          "count": 3,
+          "id": 1
+        },
+        {
+          "category": {
+            "name": "салати",
+            "path": "salad",
+            "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-a415b.appspot.com/o/images%2Fmenu-icon-3.svg.svg?alt=media&token=ef73481d-86f2-4bf7-a755-68651e598249",
+            "id": 2
+          },
+          "name": "Інсалата ді Сальмоне",
+          "path": "insalata-di-salmone",
+          "description": "рукола, помідор чері, огірок, салат айсберг, соус айолі, пармезан, лосось, перепелине яйце, кунжут.",
+          "weight": " 285 гр",
+          "price": 152,
+          "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-a415b.appspot.com/o/images%2Finsalata-di-salmone1.png.png?alt=media&token=c18993a3-9f90-40ac-9054-79ccde411cd5",
+          "count": 4,
+          "id": 2
+        },
+        {
+          "category": {
+            "name": "Десерти",
+            "path": "desserts",
+            "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-a415b.appspot.com/o/images%2Fdeserty.svg.svg?alt=media&token=f73cc3f9-30a2-4339-bb06-bcb20a4af986",
+            "id": 3
+          },
+          "name": "Сирники",
+          "path": "syrnyky",
+          "description": "сирники, карамельний соус, сметана",
+          "weight": "240 гр",
+          "price": 75,
+          "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-a415b.appspot.com/o/images%2Fsyrnyky.png.png?alt=media&token=3aa9eac9-1a7e-4915-b83b-f987e2a268a0",
+          "count": 3,
+          "id": 3
+        }
+      ],
+      "status": "PENDING",
+      "totalPrice": 1448,
+      "id": 3
+    }
+  ]
+}

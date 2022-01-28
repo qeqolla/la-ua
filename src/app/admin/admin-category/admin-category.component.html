@@ -1,0 +1,33 @@
+<button mat-raised-button (click)="openDialog()">Create category</button>
+
+<hr>
+<div class="w-100">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Path</th>
+      <th scope="col">Image</th>
+      <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cat of categories">
+      <td>{{ cat.id }}</td>
+      <td>{{ cat.name }}</td>
+      <td>{{ cat.path }}</td>
+      <td>
+        <img width="50px" [src]="cat.imagePath" alt="">
+      </td>
+      <td>
+        <div>
+          <button (click)="editCategory(cat)" type="button" class="btn btn-warning">edit</button>
+          <button (click)="deleteCategory(cat)" type="button" class="btn btn-danger">delete</button>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

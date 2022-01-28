@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="d-flex">
+    <div class="w-100">
+      <form>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea [(ngModel)]="description" name="description" class="form-control" id="description"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">Description</label>
+          <input [(ngModel)]="imagePath" name="imagePath" type="text" class="form-control" id="image" readonly>
+        </div>
+        <button *ngIf="!editStatus" (click)="addAdminDiscount()" [disabled]="!description" type="button" class="btn btn-success w-100">Add</button>
+        <button *ngIf="editStatus" (click)="saveAdminDiscount()" [disabled]="!description" type="button" class="btn btn-info w-100">Save</button>
+      </form>
+    </div>
+    <div class="w-100">
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Description</th>
+          <th scope="col">ImagePath</th>
+          <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let discount of adminDiscounts">
+            <td>{{ discount.id }}</td>
+            <td>{{ discount.description | slice: 0: 20 }} ...</td>
+            <td>
+              <img width="150px" [src]="discount.imagePath" alt="">
+            </td>
+            <td>
+              <div>
+                <button (click)="editAdminDiscount(discount)" type="button" class="btn btn-warning">edit</button>
+                <button (click)="deleteAdminDiscount(discount)" type="button" class="btn btn-danger">delete</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
